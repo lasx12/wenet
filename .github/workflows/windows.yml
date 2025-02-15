@@ -13,7 +13,7 @@ jobs:
       run:
         shell: bash
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Build
         run: |
           cd ${{ env.RUNTIME_DIR }}
@@ -30,7 +30,7 @@ jobs:
           cp build/kaldi/Release/*.exe wenet/kaldi
 
       - name: Upload WeNet Binary
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: release-wenet-binary
           path: ${{ env.RUNTIME_DIR }}/wenet
